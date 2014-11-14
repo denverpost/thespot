@@ -1,0 +1,555 @@
+<?php if ( !isset($tag_label) ) $tag_label = ''; ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta name="language" content="en, sv" />
+<meta name="Copyright" content="Copyright &copy; The Denver Post." />
+<meta http-equiv="refresh" content="900" />
+<title><?php wp_title(''); ?></title>
+<meta name="description" content="<?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('description'); ?> Colorado" />
+<!--test2 -->
+<script type="text/javascript">
+//Chartbeat startup
+var _sf_startpt=(new Date()).getTime()
+var _sf_async_config={};
+
+// FRAMEBREAKER
+ if (top !== self) 
+ {
+ 	// We want to track when this happens, which we do with a custom
+ 	// ?source=framebuster query added to the URL.
+ 	// The challenge is, often there's already a ?source=rss on the URL,
+ 	// which means we have to handle that too.
+ 	var denverposturl = self.document.location.toString();
+ 	var referrer = document.referrer.split('/')[2];
+ 	if ( denverposturl.indexOf("blogs.denverpost.com") > 0 && referrer.indexOf("denverpost.com") < 0 )
+	{
+		if ( referrer.indexOf("google") < 0 && referrer.indexOf("images.") < 0  && referrer.indexOf("ow.ly") < 0  && referrer.indexOf("digg") < 0  && referrer.indexOf("reddit") < 0 && referrer.indexOf("stumbleupon") < 0  )
+	 	{
+	 		top.location.replace(self.location);
+	 		var sourcetag = "skipframe-" + referrer;
+			//var sourcetag = "skipframe";
+	 	 	if ( denverposturl.indexOf("?source") > 0 || denverposturl.indexOf("&source") > 0  )
+	 	 	{
+	 	 		top.location.replace(denverposturl + sourcetag);
+	 	 	}
+	 	 	else if  ( denverposturl.indexOf("?") == -1 )
+	 	 	{
+	 	 		top.location.replace(denverposturl + "?source=" + sourcetag);
+	 	 	}
+	 	 	else
+	 	 	{
+	 	 		top.location.replace(denverposturl + sourcetag);
+	 	 	}
+	 	}
+	}
+ }
+
+</script>
+
+<!--
+<?PHP
+// Here we put together the ad tags for specific blogs
+
+$request_array = explode('/', $_SERVER['REQUEST_URI']);
+$blog_slug = $request_array[1];
+
+
+switch ( $blog_slug )
+{
+	case "thespot":
+		$related = array(
+			'adccc1' => 'blogs',
+			'adccc2' => 'thespot_blog' );
+		break;
+	case "davidson":
+		$related = array(
+			'adccc1' => 'columnist_blogs',
+			'adccc2' => 'seen_first' );
+		break;
+	case "husted":
+		$related = array(
+			'adccc1' => 'columnist_blogs',
+			'adccc2' => 'the_peek' );
+		break;
+	case "madmoviegoer":
+		$related = array(
+			'adccc1' => 'ent_blogs',
+			'adccc2' => 'mad_moviegoer' );
+		break;
+	case "fetch":
+		$related = array(
+			'adccc1' => 'ent_blogs',
+			'adccc2' => 'fetch' );
+		break;
+	case "highernote":
+		$related = array(
+			'adccc1' => 'ent_blogs',
+			'adccc2' => 'higher_note' );
+		break;
+	case "celebritybull":
+		$related = array(
+			'adccc1' => 'ent_blogs',
+			'adccc2' => 'jack_matador' );
+		break;
+	case "ostrow":
+		$related = array(
+			'adccc1' => 'ent_blogs',
+			'adccc2' => 'ostrow' );
+		break;
+	case "reverb":
+		$related = array(
+			'adccc1' => 'ent_blogs',
+			'adccc2' => 'reverb' );
+		break;
+	case "runninglines":
+		$related = array(
+			'adccc1' => 'ent_blogs',
+			'adccc2' => 'running_lines' );
+		break;
+	case "drinkreport":
+		$related = array(
+			'adccc1' => 'food_blogs',
+			'adccc2' => 'drink_report' );
+		break;
+	case "ontuckersplate":
+		$related = array(
+			'adccc1' => 'food_blogs',
+			'adccc2' => 'on_tuckers_plate' );
+		break;
+	case "thefoodsection":
+		$related = array(
+			'adccc1' => 'food_blogs',
+			'adccc2' => 'the_food_section' );
+		break;
+	case "preserved":
+		$related = array(
+			'adccc1' => 'food_blogs',
+			'adccc2' => 'well_preserved' );
+		break;
+	case "travel":
+		$related = array(
+			'adccc1' => 'misc_blogs',
+			'adccc2' => 'carrying_on' );
+		break;
+	case "clothescircuit":
+		$related = array(
+			'adccc1' => 'misc_blogs',
+			'adccc2' => 'clothes_circuit' );
+		break;
+	case "coloradosundaze":
+		$related = array(
+			'adccc1' => 'misc_blogs',
+			'adccc2' => 'co_sundaze' );
+		break;
+	case "diggingin":
+		$related = array(
+			'adccc1' => 'misc_blogs',
+			'adccc2' => 'diggin_in' );
+		break;
+	case "dollarsandsense":
+		$related = array(
+			'adccc1' => 'misc_blogs',
+			'adccc2' => 'dollars_and_sense' );
+		break;
+	case "hark":
+		$related = array(
+			'adccc1' => 'misc_blogs',
+			'adccc2' => 'hark' );
+		break;
+	case "homegirls":
+		$related = array(
+			'adccc1' => 'misc_blogs',
+			'adccc2' => 'home_girls' );
+		break;
+	case "economy":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'blogged_down_by_the_econ' );
+		break;
+	case "captured":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'captured' );
+		break;
+	case "coldcases":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'cold_cases' );
+		break;
+	case "coloradoclassroom":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'colorado_classroom' );
+		break;
+	case "coverthespread":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'cover_the_spread' );
+		break;
+	case "fueltalk":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'fuel_talk' );
+		break;
+	case "eco":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'rky_mtn_eco' );
+		break;
+	case "therealdeal":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'the_real_deal' );
+		break;
+	case "sportscategoryoutdoor-extremes":
+		$related = array(
+			'adccc1' => 'outdoor_blogs',
+			'adccc2' => 'outdoor_extremes' );
+		break;
+	case "avs":
+		$related = array(
+			'adccc1' => 'sports_blogs',
+			'adccc2' => 'all_things_avs' );
+		break;
+	case "broncos":
+		$related = array(
+			'adccc1' => 'sports_blogs',
+			'adccc2' => 'all_things_broncos' );
+		break;
+	case "preps":
+		$related = array(
+			'adccc1' => 'sports_blogs',
+			'adccc2' => 'all_things_co_preps' );
+		break;
+	case "sports":
+		$related = array(
+			'adccc1' => 'sports_blogs',
+			'adccc2' => 'all_things_co_sports' );
+		break;
+	case "nuggets":
+		$related = array(
+			'adccc1' => 'sports_blogs',
+			'adccc2' => 'all_things_nuggets' );
+		break;
+	case "rockies":
+		$related = array(
+			'adccc1' => 'sports_blogs',
+			'adccc2' => 'all_things_rockies' );
+		break;
+	case "coloradojournal":
+		$related = array(
+			'adccc1' => 'local_blogs',
+			'adccc2' => 'co_journal' );
+		break;
+	case "denverdoings":
+		$related = array(
+			'adccc1' => 'local_blogs',
+			'adccc2' => 'denver_doings' );
+		break;
+	case "lousinsider":
+		$related = array(
+			'adccc1' => 'local_blogs',
+			'adccc2' => 'lous_insider' );
+		break;
+	case "medschoolmemo":
+		$related = array(
+			'adccc1' => 'local_blogs',
+			'adccc2' => 'med_school_memo' );
+		break;
+	case "beer":
+		$related = array(
+			'adccc1' => 'ent_blogs',
+			'adccc2' => 'beer_blog' );
+		break;
+}
+
+
+// Special case:
+if ( $request_array[3] == 'outdoor-extremes' )
+{
+
+		$related = array(
+			'adccc1' => 'outdoor_blogs',
+			'adccc2' => 'outdoor_extremes' );
+}
+?>
+-->
+<link rel="Shortcut Icon" href="<?php echo get_settings('home'); ?>/wp-content/themes/BlogsTheme/images/favicon.ico" type="image/x-icon" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Web Feed: RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="alternate" type="text/xml" title="<?php bloginfo('name'); ?> Web Feed: RSS .92" href="<?php bloginfo('rss_url'); ?>" />
+<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Web Feed: Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<?php wp_get_archives('type=monthly&format=link'); ?>
+<?php wp_head(); ?>
+
+<link type='text/css' rel='stylesheet' href='http://extras.mnginteractive.com/live/css/site36/redesign_topNav.css'>
+<link type="text/css" rel="stylesheet" href="http://extras.mnginteractive.com/live/css/site36/redesign_default.css">
+<style type="text/css" media="screen">
+<!-- @import url(/wp-content/themes/TheSpot/style.css <?php //bloginfo('stylesheet_url'); ?> ); -->
+</style>
+
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="http://blogs.denverpost.com/httpdocs/wp-content/themes/TheSpot/style_ie7.css" />
+<![endif]-->
+
+<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" href="http://blogs.denverpost.com/httpdocs/wp-content/themes/TheSpot/style_ie6.css" />
+<![endif]-->
+
+<script type="text/javascript" src='http://an.tacoda.net/an/12503/slf.js'></script>
+<script type="text/javascript" src="http://extras.mnginteractive.com/live/js/tacoda/DartInclude.js"></script>
+<script type="text/javascript" src="http://extras.mnginteractive.com/live/js/tacoda/AccipiterInclude.js"></script>
+<script type="text/javascript" src="http://extras.mnginteractive.com/live/js/otherinc/otherinc.js"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+<!--YAHOO ADS--><script type="text/javascript">
+//General Information
+	yld_mgr = {};
+	yld_mgr.slots = {};
+	yld_mgr.pub_id="21204022309";
+	yld_mgr.site_name="www.denverpost.com";
+	yld_mgr.container_type="js";
+	yld_mgr.request_type="ac";
+	yld_mgr.clk_dest="_blank";
+	yld_mgr.ad_output_encoding="utf-8";
+	yld_mgr.max_count=3;
+	yld_mgr.content_lang="en-US";
+	yld_mgr.disable_content_send="0";
+	yld_mgr.cstm_sctn_list=["section"];
+	yld_mgr.content_topic_id_list=["20337001"];
+
+	var sectionKeywords = ["<?= $related['adccc1'] ?>","<?= $related['adccc2'] ?>"];//Custom Content Categories - lower case, comma separated, max 10 categories, a-z, 0-9(category must start with a letter), and underscores are allowed
+	var content_type_list = [""];
+	var reporting_tag_list = [""];//This is the section name
+
+
+//Ad slot configs
+
+	yld_mgr.slots.adPos0={};
+	yld_mgr.slots.adPos0.ad_size_list=["728x90"];
+	yld_mgr.slots.adPos0.ad_delivery_mode="ipatf";
+	yld_mgr.slots.adPos0.ad_format_list=["Standard Graphical","Rich Media"];
+	yld_mgr.slots.adPos0.cstm_content_cat_list=sectionKeywords;
+	yld_mgr.slots.adPos0.content_type_list=content_type_list;
+	yld_mgr.slots.adPos0.reporting_tag_list=reporting_tag_list;
+
+	yld_mgr.slots.adPos1={};
+	yld_mgr.slots.adPos1.ad_size_list=["1000x30"];
+	yld_mgr.slots.adPos1.ad_delivery_mode="ipatf";
+	yld_mgr.slots.adPos1.ad_format_list=["Standard Graphical","Rich Media"];
+	yld_mgr.slots.adPos1.cstm_content_cat_list=sectionKeywords;
+	yld_mgr.slots.adPos1.content_type_list=content_type_list;
+	yld_mgr.slots.adPos1.reporting_tag_list=reporting_tag_list;
+	
+	yld_mgr.slots.adPos2={};
+	yld_mgr.slots.adPos2.ad_size_list=["1x1"];
+	yld_mgr.slots.adPos2.ad_delivery_mode="ipatf";
+	yld_mgr.slots.adPos2.ad_format_list=["Standard Graphical","Rich Media"];
+	yld_mgr.slots.adPos2.cstm_content_cat_list=sectionKeywords;
+	yld_mgr.slots.adPos2.content_type_list=content_type_list;
+	yld_mgr.slots.adPos2.reporting_tag_list=reporting_tag_list;
+
+	yld_mgr.slots.adPos9={};
+	yld_mgr.slots.adPos9.ad_size_list=["300x250"];
+	yld_mgr.slots.adPos9.ad_delivery_mode="ipatf";
+	yld_mgr.slots.adPos9.ad_format_list=["Standard Graphical","Rich Media"];
+	yld_mgr.slots.adPos9.cstm_content_cat_list=sectionKeywords;
+	yld_mgr.slots.adPos9.content_type_list=content_type_list;
+	yld_mgr.slots.adPos9.reporting_tag_list=reporting_tag_list;
+
+	yld_mgr.slots.adPos11={};
+	yld_mgr.slots.adPos11.ad_size_list=["160x600"];
+	yld_mgr.slots.adPos11.ad_delivery_mode="ipbtf";
+	yld_mgr.slots.adPos11.ad_format_list=["Standard Graphical","Rich Media"];
+	yld_mgr.slots.adPos11.cstm_content_cat_list=sectionKeywords;
+	yld_mgr.slots.adPos11.content_type_list=content_type_list;
+	yld_mgr.slots.adPos11.reporting_tag_list=reporting_tag_list;
+
+	yld_mgr.slots.adPos14={};
+	yld_mgr.slots.adPos14.ad_size_list=["728x90"];
+	yld_mgr.slots.adPos14.ad_delivery_mode="ipbtf";
+	yld_mgr.slots.adPos14.ad_format_list=["Standard Graphical","Rich Media"];
+	yld_mgr.slots.adPos14.cstm_content_cat_list=sectionKeywords;
+	yld_mgr.slots.adPos14.content_type_list=content_type_list;
+	yld_mgr.slots.adPos14.reporting_tag_list=reporting_tag_list;
+
+</script><script type="text/javascript" src="http://e.yieldmanager.net/script.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+<script type="text/javascript">
+<!--
+function switchMenu(obj) {var el = document.getElementById(obj); if ( el.style.display != "none" ) {el.style.display = 'none';} else {el.style.display = '';}}
+function pointercursor(){document.body.style.cursor = "move";}
+function unpointercursor(){document.body.style.cursor="";}
+//-->
+</script>
+
+<div id="omniture" style="display:none;">
+    <script language="JavaScript" type="text/javascript">
+        var s_account = "denverpost";
+
+        //The Spot tracking algorithm
+        <?php if ( is_home() ) { 
+        ?>var isHome = true; //testing wp functions <?php
+        } else { ?>var isHome = false; //testing wp functions <?php } 
+        ?>
+    
+        <?php if ( is_category() ) { 
+      ?>var isCategory = true; //testing wp functions <?php
+      } else { ?>var isCategory = false; //testing wp functions <?php } 
+      ?>
+    
+        <?php if ( is_singular() ) { 
+      ?>var isSingle = true; //testing wp functions <?php
+      } else { ?>var isSingle = false; //testing wp functions <?php } 
+      ?>
+        
+        <?php if ( is_page() ) { 
+      ?>var isPage = true; //testing wp functions <?php
+      } else { ?>var isPage = false; //testing wp functions <?php } 
+      ?>
+    
+        var singleCategory = "<?php single_cat_title(); ?>"; //article site section
+        var pgTitle = "<?php the_title(); ?>"; //testing wp functions
+        var oChnm = "Blogs";
+        var oRtnm = "Blogs / <?php bloginfo('name'); ?>";
+        var Pgnm = "";
+        var oSp2nm = ""; //Prop2
+        var oSp3nm = ""; //Prop3
+        var oSp4nm = ""; //Prop4
+        var oSp5nm = ""; //Prop5
+        if (isHome) {
+            oSp2nm = "Blogs / <?php bloginfo('name'); ?> Home"; //is The Spot home
+            Pgnm = "Blogs / <?php bloginfo('name'); ?> Home";
+        } else {
+            if (isCategory) {
+                if (singleCategory) {
+                    Pgnm = "Blogs / <?php bloginfo('name'); ?> " + singleCategory; //section name available
+                    oSp2nm = singleCategory;
+                } else {
+                    Pgnm = "Blogs / <?php bloginfo('name'); ?> cat undefined"; //cannot be defined
+                    oSp2nm = "cat undefined";
+                }
+            } else {
+                if (isSingle) {
+                    if (isPage) {
+                        Pgnm = "Blogs / <?php bloginfo('name'); ?> " + pgTitle; //is a static page
+                        oSp2nm = pgTitle;
+                    } else {
+                        Pgnm = "Blogs / <?php bloginfo('name'); ?> Post: " + pgTitle; //is a post
+                        oSp2nm = "Posts";
+                        oSp5nm = pgTitle;
+                    }
+                }
+            }
+            if (singleCategory) {
+            	if (!isCategory) {
+            		    Pgnm = "Blogs / <?php bloginfo('name'); ?> Topics: " + singleCategory;
+                    oSp2nm = "Topics";
+                    oSp3nm = singleCategory;
+            	}
+            }
+        }
+        if (oSp2nm == '') {
+            oSp2nm = "?";
+        }
+        if (oSp3nm == '') {
+            oSp3nm = "?";
+        }
+        if (oSp5nm == '') {
+            oSp5nm = "?";
+        }
+        if (Pgnm == '') {
+            Pgnm = "d=g";
+        }
+        var oBrdcm2 = oChnm + "/" + oRtnm; //Prop2
+        var oBrdcm3 = oChnm + "/" + oRtnm + "/" + oSp2nm; //Prop3
+        var oBrdcm4 = oChnm + "/" + oRtnm + "/" + oSp2nm + "/" + oSp3nm; //Prop4
+        var oBrdcm5 = oChnm + "/" + oRtnm + "/" + oSp2nm + "/" + oSp3nm + "/" + oSp5nm; //Prop5
+    </script>
+    <!-- SiteCatalyst code version: H.17. Copyright 1997-2005 Omniture, Inc. More info available at http://www.omniture.com -->
+    <script language="JavaScript" type ="text/javascript" src="http://extras.mnginteractive.com/live/js/omniture/SiteCatalystCode_H_17.js"></script>
+    <script language="JavaScript" type="text/javascript" src="http://extras.mnginteractive.com/live/js/omniture/OmnitureHelper.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        s.pageName = Pgnm;
+        s.channel = oChnm;
+        s.prop1 = "D=g";
+        s.prop2 = oBrdcm2;
+        s.prop3 = oBrdcm3;
+        s.prop4 = oBrdcm4;
+        s.prop5 = oBrdcm5;
+        s.prop9 = getCiQueryString("SOURCE");
+        s.eVar2 = getCiQueryString("SOURCE");
+        s.campaign = getCiQueryString("EADID") + getCiQueryString("CREF");
+        s.events = "event1";
+        s.eVar4 = s.pageName;
+        /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+        var s_code = s.t(); if (s_code) { document.write(s_code); }
+    </script>
+    <script language="JavaScript" type="text/javascript">
+        if (navigator.appVersion.indexOf('MSIE') >= 0) { document.write(unescape('%3C') + '\!-' + '-'); }
+    </script>
+    <noscript>
+        <img src="http://denverpost.112.2O7.net/b/ss/denverpost/1/H.17--NS/0" height="1" width="1" border="0" alt="" />
+    </noscript>
+    <!-- End SiteCatalyst code version: H.17. -->
+</div>
+
+<div id="container" class="clearfix">
+<div id="header">
+<div align="center" id="adPosition0"><script type="text/javascript">yld_mgr.place_ad_here("adPos0");</script></div></div>
+
+<div id="masthead_section" class="clearfix">
+  <div id="masthead_sectionlogo"><a href="http://www.denverpost.com"><img src="http://extras.mnginteractive.com/live/media/site36/2006/0927/20060815_054356_logo_articles.gif" width="351" height="50" border="0" /></a></div>
+  <div id="sectionname"><a href="http://blogs.denverpost.com">Blogs</a>: <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></div>
+<div id="masthead_sectiondate"><script>
+			var date = new Date();
+			document.write(date.toLocaleDateString());
+			</script></div>
+</div>
+
+
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0"><tr><td valign="top">
+<span id='redesign_topNav'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://extras.denverpost.com/media/app/nav/vendors/nav_vendor.js"></script>
+<!--
+        <link type='text/css' rel='stylesheet' href='http://extras.mnginteractive.com/live/css/site36/redesign_topNav.css'>
+        <div id="navcontainer">
+        </div>
+
+        <script type="text/javascript" src="http://extras.denverpost.com/vendor_templates/includes/nav.js"></script>
+        <script type="text/javascript">write_nav('news');</script>
+-->
+
+</span>
+</td></tr></table>
+
+<table border="0" width="100%" cellpadding="10" cellspacing="0"><tr><td valign="top">
+<!--<div id="searchbar"><script type="text/javascript" src="http://extras.denverpost.com/vendor_templates/includes/searchbar.js"></script></div>-->
+<!--Commented out to end confusion between searching in blogs and searching for regular DP content-->
+<!--<script type="text/javascript" src="http://extras.denverpost.com/vendor_templates/includes/dealbar.js"></script>
+<script type="text/javascript">writeDealBar();</script>-->
+<?php if ($related['adccc2'] == 'beer_blog'){?>
+<!-- Ads wanted a sliding billboard on the beer blog. It looks like the ad will work without much tweaking, so remove the conditional if we want it everywhere -->
+<div align="center" class="adElement" id="adPosition1"><script type="text/javascript">yld_mgr.place_ad_here("adPos1");</script></div>
+<?php } ?>
+</td></tr></table>
+
+<!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+<script type="text/javascript" src="http://extras.denverpost.com/media/js/blogstheme/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script type="text/javascript" src="http://extras.denverpost.com/media/js/blogstheme/sprinkle.js"></script>
+
+<div id="customheader">
+	<a href="<?php bloginfo('url'); ?>"><img src="<?php header_image() ?>" alt="Header" title="Header" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" /></a>
+</div>
+
+	</div>
+<!-- Closes the header div-->
