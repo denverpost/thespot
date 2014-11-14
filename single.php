@@ -41,10 +41,10 @@
                     <?php if(function_exists( 'wp_email')) { email_link(); } ?>
                 </div>
                 <div class="articletools">
-                    <fb:like send="true" layout="button_count" width="50" show_faces="false" font="arial"></fb:like>
+                    <div class="fb-like" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
                 </div>
                 <div class="articletools">
-                    <g:plusone size="medium" href="<?php the_permalink(); ?>"></g:plusone>
+                    <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
                     <script type="text/javascript">
                         (function () {
                             var po = document.createElement('script');
@@ -56,7 +56,8 @@
                         })();
                     </script>
                 </div>
-                <div class="articletools"><a href="http://twitter.com/share?url=<?php the_permalink(); ?>" class="twitter-share-button">Tweet</a>
+                <div class="articletools">
+			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost&counturl="<?php get_the_permalink(); ?>"" class="twitter-share-button">Tweet</a>
                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </div>
             </div>
@@ -116,7 +117,7 @@
                     <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
                 </li>
                 <li>
-                    <g:plusone size="medium" href="<?php the_permalink(); ?>"></g:plusone>
+                    <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
                     <script type="text/javascript">
                         (function () {
                             var po = document.createElement('script');
@@ -128,7 +129,11 @@
                         })();
                     </script>
                 </li>
-                <li style="padding: 0px!important;"><a href="http://twitter.com/share?url=<?php the_permalink(); ?>" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a>
+                <li style="padding: 0px!important;">
+			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost" data-counturl="<?php get_the_permalink(); ?>" class="twitter-share-button">Tweet</a>
+<!--
+<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a>
+-->
                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </li>
                 <div class="clear"></div>
@@ -190,8 +195,8 @@
         <div id="dpArticleRelatedDump" class="dpArticleDump dpActiveDump">
             <!-- ##### Begin Outbrain Test ##### -->
 
-            <div class="OUTBRAIN" data-src="<?php the_permalink(); ?>" data-widget-id="AR_1" data-ob-template="Denver Post Blogs"></div>
-            <div class="OUTBRAIN" data-src="<?php the_permalink(); ?>" data-widget-id="AR_2" data-ob-template="Denver Post Blogs"></div>
+            <div class="OUTBRAIN" data-src="<?php echo wp_get_shortlink(); ?>" data-widget-id="AR_1" data-ob-template="Denver Post Blogs"></div>
+            <div class="OUTBRAIN" data-src="<?php echo wp_get_shortlink(); ?>" data-widget-id="AR_2" data-ob-template="Denver Post Blogs"></div>
             <script type="text/javascript" async="async" src="http://widgets.outbrain.com/outbrain.js"></script>
 
             <!-- ##### End Outbrain Test ##### -->
