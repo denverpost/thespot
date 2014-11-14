@@ -1,4 +1,3 @@
-bout denver-post-marijuana
 The Spot Wordpress theme
 ======
 
@@ -16,4 +15,3 @@ Since modified heavily by:
 Daniel Petty
 Daniel J. Schneider
 Joe Murphy
-Korene Gallegos
