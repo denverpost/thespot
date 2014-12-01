@@ -43,11 +43,11 @@
 							<div class="articletools">
 							<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
                                 <a href="http://twitter.com/share" class="twitter-share-button"
-                                         data-url="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"
+                                         data-url="<?php echo wp_get_shortlink(the_ID()); //wpbitly shortcode ?>"
                                          data-via="<?php the_author_meta("jabber",$twitter_user_id); ?>"
                                          data-related="monserud,danielpetty,denverpost"
                                          data-text="<?php the_title(); ?>:"
-					 data-counturl="<?php get_the_permalink(); ?>"
+                                         data-counturl="<?php get_the_permalink(the_ID()); ?>"
                                          data-count="horizontal">Tweet</a>
                           </div>
                         </div>
