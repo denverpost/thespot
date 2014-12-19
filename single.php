@@ -57,7 +57,7 @@
                     </script>
                 </div>
                 <div class="articletools">
-			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost&counturl="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"" class="twitter-share-button">Tweet</a>
+			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost&counturl="<?php get_the_permalink(); ?>"" class="twitter-share-button">Tweet</a>
                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </div>
             </div>

@@ -47,7 +47,7 @@
                                          data-via="<?php the_author_meta("jabber",$twitter_user_id); ?>"
                                          data-related="monserud,danielpetty,denverpost"
                                          data-text="<?php the_title(); ?>:"
-                                         data-counturl="<?php wp_get_shortlink(get_the_ID()); //wpbitly shortcode ?>"
+                                         data-counturl="<?php get_the_permalink(get_the_ID()); ?>"
                                          data-count="horizontal">Tweet</a>
                           </div>
                         </div>
