@@ -25,9 +25,7 @@
 							<div class="sidebarcomments"><a href="<?php comments_link(); ?>"><?php comments_number('Add a comment','Comments (1)','Comments (%)'); ?></a></div>
 							<div class="articletools"><?php if(function_exists('wp_print')) { print_link(); } ?></div>
 							<div class="articletools"><?php if(function_exists('wp_email')) { email_link(); } ?></div>
-							<div class="articletools" style="margin-bottom: 8px!important;"><a name="fb_share" type="button_count" share_url="<?php the_permalink(); ?>" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></div>
-                            <div class="articletools"><iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink(); ?>&amp;layout=button_count&amp;show_faces=false&amp;width=80&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe></div>
-                            <div class="articletools">
+							<div class="articletools"><iframe src="http://www.facebook.com/plugins/share_button.php?href=<?php the_permalink(); ?>&amp;layout=button_count&amp;appId=105517551922" scrolling="no" frameborder="0" style="border:none; overflow:hidden;height:21px;" allowTransparency="true"></iframe></div>
 								<g:plusone size="medium" href="<?php the_permalink(); ?>"></g:plusone>
 
 								<script type="text/javascript">
@@ -47,12 +45,12 @@
 				</div><!-- Closes post-ID div -->
 					<div class="postmeta">
 						<ul class="articletools">
-                                                      <li class="comments"><?php comments_popup_link(('Add a comment'), ('Comments (1)'), ('Comments (%)')); ?></li>
-                                                      <li><?php if(function_exists('wp_print')) { print_link(); } ?></li>
-                                                      <li><?php if(function_exists('wp_email')) { email_link(); } ?></li>
-                                                      <li style="padding: 0px!important;"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
-                                                      <li><iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink(); ?>&amp;layout=button_count&amp;show_faces=false&amp;width=80&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe></li>
-                                                </ul>
+                              <li class="comments"><?php comments_popup_link(('Add a comment'), ('Comments (1)'), ('Comments (%)')); ?></li>
+                              <li><?php if(function_exists('wp_print')) { print_link(); } ?></li>
+                              <li><?php if(function_exists('wp_email')) { email_link(); } ?></li>
+                              <li style="padding: 0px!important;"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
+                              <div class="articletools"><iframe src="http://www.facebook.com/plugins/share_button.php?href=<?php the_permalink(); ?>&amp;layout=button_count&amp;appId=105517551922" scrolling="no" frameborder="0" style="border:none; overflow:hidden;height:21px;" allowTransparency="true"></iframe></div>
+                        </ul>
                                                 
                                                 <div style="margin: 10px 0 0 155px;"><strong>Categories:</strong> <?php the_category(', '); ?></div>
 					</div>

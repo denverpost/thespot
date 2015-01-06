@@ -29,7 +29,7 @@
 							<div class="sidebarcomments"><?php comments_popup_link(('Add a comment'), ('Comments (1)'), ('Comments (%)')); ?></div>
 							<div class="articletools"><?php if(function_exists('wp_print')) { print_link(); } ?></div>
 							<div class="articletools"><?php if(function_exists('wp_email')) { email_link(); } ?></div>
-							<div class="articletools"><div class="fb-like" data-href="<?php echo wp_get_shortlink(get_the_ID()); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div></div>
+							<div class="articletools"><div class="fb-share-button" data-href="<?php echo wp_get_shortlink(get_the_ID()); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div></div>
       						<div class="articletools">
 								<g:plusone size="medium" href="<?php echo wp_get_shortlink(get_the_ID()); //wpbitly shortcode ?>"></g:plusone>
 								<script type="text/javascript">
