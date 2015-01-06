@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <!-- <meta http-equiv="refresh" content="600"> -->
+<meta name="google-site-verification" content="2bKNvyyGh6DUlOvH1PYsmKN4KRlb-0ZI7TvFtuKLeAc" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="distribution" content="global" />
 <meta name="robots" content="follow, all" />
