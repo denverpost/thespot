@@ -169,8 +169,8 @@ ul {
 }
 
 h1 {
-    width: 483px;
-    margin: 0 0 10px 155px;
+    width: 100%;
+    margin: 0 0 10px;
     padding-left: 0px;
     color: #000000;
     font-size: 1.9em;
@@ -317,7 +317,6 @@ blockquote, blockquote p, blockquote i, blockquote em, blockquote b, blockquote 
     color: #525252;
     width: 100%;
     padding: 10px 0;
-    text-indent: 155px;
     margin-bottom: 5px;
     font-size: .85em;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -399,7 +398,6 @@ blockquote, blockquote p, blockquote i, blockquote em, blockquote b, blockquote 
     padding-top: 10px;
     line-height: 1.4em;
 }
-
 
 .storycontent p {
     font-family: Georgia,Times,"Times New Roman",serif;
