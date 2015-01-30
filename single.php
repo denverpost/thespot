@@ -195,8 +195,8 @@
         <div id="dpArticleRelatedDump" class="dpArticleDump dpActiveDump">
             <!-- ##### Begin Outbrain Test ##### -->
 
-            <div class="OUTBRAIN" data-src="<?php echo wp_get_shortlink(); ?>" data-widget-id="AR_1" data-ob-template="Denver Post Blogs"></div>
-            <div class="OUTBRAIN" data-src="<?php echo wp_get_shortlink(); ?>" data-widget-id="AR_2" data-ob-template="Denver Post Blogs"></div>
+            <div class="OUTBRAIN" data-src="<?php echo get_permalink(); ?>" data-widget-id="AR_1" data-ob-template="Denver Post Blogs"></div>
+            <div class="OUTBRAIN" data-src="<?php echo get_permalink(); ?>" data-widget-id="AR_2" data-ob-template="Denver Post Blogs"></div>
             <script type="text/javascript" async="async" src="http://widgets.outbrain.com/outbrain.js"></script>
 
             <!-- ##### End Outbrain Test ##### -->
