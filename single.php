@@ -41,7 +41,7 @@
                     <?php if(function_exists( 'wp_email')) { email_link(); } ?>
                 </div>
                 <div class="articletools">
-                    <div class="fb-like" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+                    <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
                 </div>
                 <div class="articletools">
                     <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
@@ -114,7 +114,7 @@
                     <?php if(function_exists( 'wp_email')) { email_link(); } ?>
                 </li>
                 <li>
-                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+                    <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
                 </li>
                 <li>
                     <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
