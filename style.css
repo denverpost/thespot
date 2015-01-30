@@ -6,6 +6,7 @@ Author: Daniel Petty and Daniel J. Schneider 2009-2013
 Author URI: http://blogs.denverpost.com
 
 */
+#dfmMasthead { height:80px!important; }
 
 /* email subscribe widget tweaks */
 form p#subscribe-email {
