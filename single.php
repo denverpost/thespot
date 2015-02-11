@@ -40,13 +40,6 @@
                 <div class="articletools">
                     <?php if(function_exists( 'wp_email')) { email_link(); } ?>
                 </div>
-
-                <div class="articletools smslink">
-                    <a href="javascript:void(0);">SMS</a>
-                </div>
-                <div class="articletools">
-                    <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-                </div>
                 <div class="articletools">
                     <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
                     <script type="text/javascript">
@@ -59,6 +52,12 @@
                             s.parentNode.insertBefore(po, s);
                         })();
                     </script>
+                </div>
+                <div class="articletools smslink">
+                    <a href="javascript:void(0);">SMS</a>
+                </div>
+                <div class="articletools">
+                    <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
                 </div>
                 <div class="articletools">
                     <a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost&counturl="<?php get_the_permalink(); ?>"" class="twitter-share-button">Tweet</a>
@@ -116,7 +115,19 @@
                 <li>
                     <?php if(function_exists( 'wp_email')) { email_link(); } ?>
                 </li>
-
+                <li>
+                    <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
+                    <script type="text/javascript">
+                        (function () {
+                            var po = document.createElement('script');
+                            po.type = 'text/javascript';
+                            po.async = true;
+                            po.src = 'https://apis.google.com/js/plusone.js';
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(po, s);
+                        })();
+                    </script>
+                </li>
                 <li class="smslink"><a href="javascript:void(0);">SMS</a></li>
                     <script>
                     function customEmailMessageEncoder(str) {
@@ -153,19 +164,6 @@
 <a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a>
 -->
                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-                </li>
-                <li>
-                    <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
-                    <script type="text/javascript">
-                        (function () {
-                            var po = document.createElement('script');
-                            po.type = 'text/javascript';
-                            po.async = true;
-                            po.src = 'https://apis.google.com/js/plusone.js';
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(po, s);
-                        })();
-                    </script>
                 </li>
                 <div class="clear"></div>
             </ul>

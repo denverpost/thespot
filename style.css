@@ -1623,8 +1623,10 @@ div.clear {
     }
     #content #sidebar .feedback .articletools:nth-child(2),
     #content #sidebar .feedback .articletools:nth-child(3),
+    #content #sidebar .feedback .articletools:nth-child(4),
     #content div.postmeta ul.articletools li:nth-child(2),
-    #content div.postmeta ul.articletools li:nth-child(3) {
+    #content div.postmeta ul.articletools li:nth-child(3),
+    #content div.postmeta ul.articletools li:nth-child(4) {
         display:none;
     }
     #content div.storycontent, #content div.postmeta {
