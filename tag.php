@@ -56,7 +56,10 @@
 							<li><?php if(function_exists('wp_email')) { email_link(); } ?></li>
 							<li class="smslink"><a href="javascript:void(0);">SMS</a></li>
 								<script>
-								$('li.smslink').on('click', function() {
+								function customEmailMessageEncoder(str) {
+						        	return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, "%2A").replace(/%20%0A%20%0A/g, "%20%0A%0D");
+						        }
+								jQuery('li.smslink').on('click', function() {
 									// sms link does not work on iOS 7
 									var ua = navigator.userAgent.toLowerCase();
 									var iOSVersion = [];
@@ -73,7 +76,7 @@
 									protocol += 'body=';
 									var title = '<?php the_title(); ?>';
 									var link = '<?php wp_get_shortlink(); ?>';
-									var message = protocol + self.customEmailMessageEncoder(title) + '%0A%0D' + self.customEmailMessageEncoder(link);
+									var message = protocol + customEmailMessageEncoder(title) + '%0A%0D' + customEmailMessageEncoder(link);
 									window.open(message , '_self');
 								});
 								</script>
