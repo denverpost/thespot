@@ -34,6 +34,9 @@
                         <?php comments_number( 'Add a comment', 'Comments (1)', 'Comments (%)'); ?>
                     </a>
                 </div>
+                <div class="articletools smslink">
+                    <a href="javascript:void(0);">SMS</a>
+                </div>
                 <div class="articletools">
                     <?php if(function_exists( 'wp_print')) { print_link(); } ?>
                 </div>
@@ -107,6 +110,32 @@
                 <li class="comments">
                     <?php comments_popup_link(( 'Add a comment'), ( 'Comments (1)'), ( 'Comments (%)')); ?>
                 </li>
+                <li class="smslink"><a href="javascript:void(0);">SMS</a></li>
+                    <script>
+                    function customEmailMessageEncoder(str) {
+                        return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, "%2A").replace(/%20%0A%20%0A/g, "%20%0A%0D");
+                    }
+                    jQuery('.smslink').on('click', function() {
+                        // sms link does not work on iOS 7
+                        var ua = navigator.userAgent.toLowerCase();
+                        var iOSVersion = [];
+                        if (/iP(hone|od|ad)/.test(navigator.platform)) {
+                            var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+                            iOSVersion = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+                        }
+                        var protocol = 'sms:';
+                        if ( iOSVersion.length > 0 && iOSVersion[0] > 7 ) {
+                            protocol += '&';
+                        } else {
+                            protocol += (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) ? ';' : '?';
+                        }
+                        protocol += 'body=';
+                        var title = '<?php the_title(); ?>';
+                        var link = '<?php wp_get_shortlink(); ?>';
+                        var message = protocol + customEmailMessageEncoder(title) + '%0A%0D' + customEmailMessageEncoder(link);
+                        window.open(message , '_self');
+                    });
+                    </script>
                 <li>
                     <?php if(function_exists( 'wp_print')) { print_link(); } ?>
                 </li>

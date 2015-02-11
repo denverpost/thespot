@@ -1509,7 +1509,7 @@ div.clear {
     width:100%;
     display:block;
 }
-li.smslink { display:none; }
+.smslink { display:none; }
 
 @media only screen and (max-width:650px) {      
     #top_leaderboard_wrap,
@@ -1654,5 +1654,5 @@ li.smslink { display:none; }
         border: 1px solid #999999;
         width: 50px;
     }
-    li.smslink { display:block; }
+    .smslink { display:block; }
 }
