@@ -1509,6 +1509,8 @@ div.clear {
     width:100%;
     display:block;
 }
+li.smslink { display:none; }
+
 @media only screen and (max-width:650px) {      
     #top_leaderboard_wrap,
     #sidebar2,
@@ -1645,11 +1647,12 @@ div.clear {
         width:100%;
     }
     .pagecontent {
-    width: 100%;
-    margin: 0 10px;
+        width: 100%;
+        margin: 0 10px;
     }
     img {
-    border: 1px solid #999999;
-    width: 50px;
-}
+        border: 1px solid #999999;
+        width: 50px;
+    }
+    li.smslink { display:block; }
 }

@@ -54,8 +54,29 @@
 							<li class="comments"><?php comments_popup_link(('Add a comment'), ('Comments (1)'), ('Comments (%)')); ?></li>
 							<li><?php if(function_exists('wp_print')) { print_link(); } ?></li>
 							<li><?php if(function_exists('wp_email')) { email_link(); } ?></li>
-							<?php if ( wp_is_mobile() ): ?>
-								<li class="smslink"><a href="sms:&body=<?php the_title(); ?>: <?php echo wp_get_shortlink(); ?>">SMS</a></li>
+							<li class="smslink"><a href="javascript:void(0);">SMS</a></li>
+								<script>
+								$('li.smslink').on('click', function() {
+								// sms link does not work on iOS 7
+								var ua = navigator.userAgent.toLowerCase();
+								var iOSVersion = [];
+								if (/iP(hone|od|ad)/.test(navigator.platform)) {
+									var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+									iOSVersion = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+								}
+								var protocol = 'sms:';
+								if ( iOSVersion.length > 0 && iOSVersion[0] > 7 ) {
+									protocol += '&';
+								} else {
+									protocol += (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) ? ';' : '?';
+								}
+								protocol += 'body=';
+								var title = '<?php the_title(); ?>';
+								var link = '<?php wp_get_shortlink(); ?>';
+								var message = protocol + self.customEmailMessageEncoder(title) + '%0A%0D' + self.customEmailMessageEncoder(link);
+								window.open(message , '_self');
+							});
+								</script>
 							<?php endif; ?>
 							<li style="padding: 0px!important;"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
 							<li style="padding: 0px!important;"><div class="fb-share-button" data-href="<?php echo wp_get_shortlink(get_the_ID()); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div></li>
