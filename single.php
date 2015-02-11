@@ -110,6 +110,7 @@
                 <li class="comments">
                     <?php comments_popup_link(( 'Add a comment'), ( 'Comments (1)'), ( 'Comments (%)')); ?>
                 </li>
+                <li>
                     <?php if(function_exists( 'wp_print')) { print_link(); } ?>
                 </li>
                 <li>
@@ -128,7 +129,7 @@
                         })();
                     </script>
                 </li>
-                <li class="smslink"><a href="javascript:void(0);">SMS</a></li>
+                <li class="smslink"><a href="javascript:void(0);">SMS</a>
                     <script>
                     function customEmailMessageEncoder(str) {
                         return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, "%2A").replace(/%20%0A%20%0A/g, "%20%0A%0D");
@@ -154,15 +155,12 @@
                         window.open(message , '_self');
                     });
                     </script>
-                <li>
+                </li>
                 <li>
                     <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
                 </li>
                 <li style="padding: 0px!important;">
-			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost" data-counturl="<?php get_the_permalink(); ?>" class="twitter-share-button">Tweet</a>
-<!--
-<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a>
--->
+        			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost" data-counturl="<?php get_the_permalink(); ?>" class="twitter-share-button">Tweet</a>
                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </li>
                 <div class="clear"></div>
