@@ -34,14 +34,15 @@
                         <?php comments_number( 'Add a comment', 'Comments (1)', 'Comments (%)'); ?>
                     </a>
                 </div>
-                <div class="articletools smslink">
-                    <a href="javascript:void(0);">SMS</a>
-                </div>
                 <div class="articletools">
                     <?php if(function_exists( 'wp_print')) { print_link(); } ?>
                 </div>
                 <div class="articletools">
                     <?php if(function_exists( 'wp_email')) { email_link(); } ?>
+                </div>
+
+                <div class="articletools smslink">
+                    <a href="javascript:void(0);">SMS</a>
                 </div>
                 <div class="articletools">
                     <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
@@ -60,7 +61,7 @@
                     </script>
                 </div>
                 <div class="articletools">
-			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost&counturl="<?php get_the_permalink(); ?>"" class="twitter-share-button">Tweet</a>
+                    <a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost&counturl="<?php get_the_permalink(); ?>"" class="twitter-share-button">Tweet</a>
                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </div>
             </div>
@@ -110,6 +111,12 @@
                 <li class="comments">
                     <?php comments_popup_link(( 'Add a comment'), ( 'Comments (1)'), ( 'Comments (%)')); ?>
                 </li>
+                    <?php if(function_exists( 'wp_print')) { print_link(); } ?>
+                </li>
+                <li>
+                    <?php if(function_exists( 'wp_email')) { email_link(); } ?>
+                </li>
+
                 <li class="smslink"><a href="javascript:void(0);">SMS</a></li>
                     <script>
                     function customEmailMessageEncoder(str) {
@@ -131,19 +138,21 @@
                         }
                         protocol += 'body=';
                         var title = '<?php the_title(); ?>';
-                        var link = '<?php wp_get_shortlink(); ?>';
+                        var link = '<?php echo wp_get_shortlink(); ?>';
                         var message = protocol + customEmailMessageEncoder(title) + '%0A%0D' + customEmailMessageEncoder(link);
                         window.open(message , '_self');
                     });
                     </script>
                 <li>
-                    <?php if(function_exists( 'wp_print')) { print_link(); } ?>
-                </li>
-                <li>
-                    <?php if(function_exists( 'wp_email')) { email_link(); } ?>
-                </li>
                 <li>
                     <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+                </li>
+                <li style="padding: 0px!important;">
+			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost" data-counturl="<?php get_the_permalink(); ?>" class="twitter-share-button">Tweet</a>
+<!--
+<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a>
+-->
+                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </li>
                 <li>
                     <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
@@ -157,13 +166,6 @@
                             s.parentNode.insertBefore(po, s);
                         })();
                     </script>
-                </li>
-                <li style="padding: 0px!important;">
-			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost" data-counturl="<?php get_the_permalink(); ?>" class="twitter-share-button">Tweet</a>
-<!--
-<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a>
--->
-                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </li>
                 <div class="clear"></div>
             </ul>
