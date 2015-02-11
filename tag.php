@@ -55,7 +55,7 @@
 							<li><?php if(function_exists('wp_print')) { print_link(); } ?></li>
 							<li><?php if(function_exists('wp_email')) { email_link(); } ?></li>
 							<?php if ( wp_is_mobile() ): ?>
-								<li class="smslink"><a href="sms:body=<?php the_title(); ?>: <?php echo wp_get_shortlink(); ?>">SMS</a></li>
+								<li class="smslink"><a href="sms:&body=<?php the_title(); ?>: <?php echo wp_get_shortlink(); ?>">SMS</a></li>
 							<?php endif; ?>
 							<li style="padding: 0px!important;"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
 							<li style="padding: 0px!important;"><div class="fb-share-button" data-href="<?php echo wp_get_shortlink(get_the_ID()); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div></li>
