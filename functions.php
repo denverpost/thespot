@@ -338,7 +338,19 @@ function disable_self_trackback( &$links ) {
 }
 add_action( 'pre_ping', 'disable_self_trackback' );
 
-// remove Jetpack OpenGraph tags
-remove_action('wp_head','jetpack_og_tags');
+// remove Jetpack OpenGraph tags and Twitter Cards
+add_filter( 'jetpack_enable_opengraph', '__return_false', 99 );
+add_filter( 'jetpack_disable_twitter_cards', '__return_true', 99 );
+
+// allow script tags in editor
+function allow_script_tags( $allowedposttags ){
+  $allowedposttags['script'] = array(
+      'src' => true,
+      'height' => true,
+      'width' => true,
+    );
+  return $allowedposttags;
+}
+add_filter('wp_kses_allowed_html','allow_script_tags', 1);
 
 ?>

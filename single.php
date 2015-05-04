@@ -41,9 +41,6 @@
                     <?php if(function_exists( 'wp_email')) { email_link(); } ?>
                 </div>
                 <div class="articletools">
-                    <div class="fb-like" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-                </div>
-                <div class="articletools">
                     <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
                     <script type="text/javascript">
                         (function () {
@@ -56,8 +53,14 @@
                         })();
                     </script>
                 </div>
+                <div class="articletools smslink">
+                    <a href="javascript:void(0);">SMS</a>
+                </div>
                 <div class="articletools">
-			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost&counturl="<?php get_the_permalink(); ?>"" class="twitter-share-button">Tweet</a>
+                    <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+                </div>
+                <div class="articletools">
+                    <a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost&counturl="<?php get_the_permalink(); ?>"" class="twitter-share-button">Tweet</a>
                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </div>
             </div>
@@ -114,9 +117,6 @@
                     <?php if(function_exists( 'wp_email')) { email_link(); } ?>
                 </li>
                 <li>
-                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-                </li>
-                <li>
                     <g:plusone size="medium" href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>"></g:plusone>
                     <script type="text/javascript">
                         (function () {
@@ -129,11 +129,38 @@
                         })();
                     </script>
                 </li>
+                <li class="smslink"><a href="javascript:void(0);">SMS</a>
+                    <script>
+                    function customEmailMessageEncoder(str) {
+                        return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, "%2A").replace(/%20%0A%20%0A/g, "%20%0A%0D");
+                    }
+                    jQuery('.smslink').on('click', function() {
+                        // sms link does not work on iOS 7
+                        var ua = navigator.userAgent.toLowerCase();
+                        var iOSVersion = [];
+                        if (/iP(hone|od|ad)/.test(navigator.platform)) {
+                            var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+                            iOSVersion = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+                        }
+                        var protocol = 'sms:';
+                        if ( iOSVersion.length > 0 && iOSVersion[0] > 7 ) {
+                            protocol += '&';
+                        } else {
+                            protocol += (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) ? ';' : '?';
+                        }
+                        protocol += 'body=';
+                        var title = '<?php the_title(); ?>';
+                        var link = '<?php echo wp_get_shortlink(); ?>';
+                        var message = protocol + customEmailMessageEncoder(title) + '%0A%0D' + customEmailMessageEncoder(link);
+                        window.open(message , '_self');
+                    });
+                    </script>
+                </li>
+                <li>
+                    <div class="fb-share-button" data-href="<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+                </li>
                 <li style="padding: 0px!important;">
-			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost" data-counturl="<?php get_the_permalink(); ?>" class="twitter-share-button">Tweet</a>
-<!--
-<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>" class="twitter-share-button" data-count="horizontal" data-via="denverpost">Tweet</a>
--->
+        			<a href="http://twitter.com/share?url=<?php echo wp_get_shortlink(); //wpbitly shortcode ?>&via=<?php the_author_meta("jabber",$twitter_user_id); ?>&related=monserud,denverpost" data-counturl="<?php get_the_permalink(); ?>" class="twitter-share-button">Tweet</a>
                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                 </li>
                 <div class="clear"></div>
@@ -195,8 +222,8 @@
         <div id="dpArticleRelatedDump" class="dpArticleDump dpActiveDump">
             <!-- ##### Begin Outbrain Test ##### -->
 
-            <div class="OUTBRAIN" data-src="<?php echo wp_get_shortlink(); ?>" data-widget-id="AR_1" data-ob-template="Denver Post Blogs"></div>
-            <div class="OUTBRAIN" data-src="<?php echo wp_get_shortlink(); ?>" data-widget-id="AR_2" data-ob-template="Denver Post Blogs"></div>
+            <div class="OUTBRAIN" data-src="<?php echo get_permalink(); ?>" data-widget-id="AR_1" data-ob-template="Denver Post Blogs"></div>
+            <div class="OUTBRAIN" data-src="<?php echo get_permalink(); ?>" data-widget-id="AR_2" data-ob-template="Denver Post Blogs"></div>
             <script type="text/javascript" async="async" src="http://widgets.outbrain.com/outbrain.js"></script>
 
             <!-- ##### End Outbrain Test ##### -->

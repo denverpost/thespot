@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <!-- <meta http-equiv="refresh" content="600"> -->
+<meta name="google-site-verification" content="2bKNvyyGh6DUlOvH1PYsmKN4KRlb-0ZI7TvFtuKLeAc" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="distribution" content="global" />
 <meta name="robots" content="follow, all" />
@@ -125,7 +126,7 @@ if (top !== self)
 <script type="text/javascript" async src="http://launch.newsinc.com/js/embed.js" id="_nw2e-js"></script>
 <script type="text/javascript" src="//www.googletagservices.com/tag/js/gpt.js"></script>
 
-<?php if (!is_single() ) { ?>
+<?php if (!is_singular() ) { ?>
 	<script type="text/javascript" src="http://extras.denverpost.com/media/js/metaRefresh.js"></script>
 <?php } ?>
 
