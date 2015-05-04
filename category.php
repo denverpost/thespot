@@ -6,7 +6,7 @@
 		  <div class="post" id="post-<?php the_ID(); ?>"></div>
 
 <div class="post">
-		<div class="thedate"><span style="font-weight: bold; text-transform: uppercase;"><?php the_author_meta('aim'); ?></span> | <a href="<?php bloginfo('url'); ?>/<?php the_time('Y'); ?>/<?php the_time('m'); ?>/<?php the_time('d'); ?>"><?php the_time('F j, Y'); ?></a><?php the_time(', g:i a'); ?></div>
+		<div class="thedate"><span style="font-weight: bold; text-transform: uppercase;"><a href="<?php bloginfo('url'); ?>/<?php the_time('Y'); ?>/<?php the_time('m'); ?>/<?php the_time('d'); ?>"><?php the_time('F j, Y'); ?></a><?php the_time(', g:i a'); ?></div>
 				<div id="post-<?php the_ID(); ?>">
 						<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 

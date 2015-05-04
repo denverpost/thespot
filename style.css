@@ -1343,6 +1343,12 @@ ul.siteOverview-column li a:hover {
     padding: 2px 0px 4px 10px;
     font-family: "Merriweather",Georgia,"Times New Roman",Times,serif;
 }
+.searchresult span {
+    font-size:.9em;
+}
+body #wrapper .searchresult span a {
+    color:#fff;
+}
 
 
 .searchinfo {
