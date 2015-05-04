@@ -1345,9 +1345,13 @@ ul.siteOverview-column li a:hover {
 }
 .searchresult span {
     font-size:.9em;
+    float:right;
+    padding-top:4px;
+    padding-right:1em;
 }
 body #wrapper .searchresult span a {
     color:#fff;
+    font-size:.9em;
 }
 
 

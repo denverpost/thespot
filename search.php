@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
      <div id="content">
-     	<div class="searchresult">Search results: <?php echo get_search_query(); ?><span style="float: right; margin-right: 10px;"><img src="http://blogs.denverpost.com/wp-includes/images/rss.png" style="margin-right: 3px;" /><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>feed/" class="rss">RSS feed</a></span></div>
+     	<div class="searchresult">Search results: <?php echo get_search_query(); ?><span><img src="http://blogs.denverpost.com/wp-includes/images/rss.png" style="margin-right: 3px;" /><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>feed/" class="rss">RSS feed</a></span></div>
 	  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	       <div class="post">
 		<div class="thedate"><span style="font-weight: bold; text-transform: uppercase;"><a href="<?php bloginfo('url'); ?>/<?php the_time('Y'); ?>/<?php the_time('m'); ?>/<?php the_time('d'); ?>"><?php the_time('F j, Y'); ?></a><?php the_time(', g:i a'); ?></div>

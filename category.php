@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
   
     <div id="content">
-	    <div class="searchresult">Posts by Category: <?php echo single_cat_title(); ?><span style="float: right; margin-right: 10px;"><img src="http://blogs.denverpost.com/wp-includes/images/rss.png" style="margin-right: 3px;" /><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>feed/" class="rss">RSS feed</a></span></div>
+	    <div class="searchresult">Posts by Category: <?php echo single_cat_title(); ?><span><img src="http://blogs.denverpost.com/wp-includes/images/rss.png" style="margin-right: 3px;" /><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>feed/" class="rss">RSS feed</a></span></div>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		  <div class="post" id="post-<?php the_ID(); ?>"></div>
 
