@@ -7,6 +7,7 @@ Author URI: http://blogs.denverpost.com
 
 */
 #dfmMasthead { height:80px!important; }
+#dfmPageTitle { padding-top:0!important; }
 
 /* email subscribe widget tweaks */
 form p#subscribe-email {
