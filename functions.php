@@ -36,6 +36,12 @@ switch ( $blog_slug )
 			'adccc2' => 'editors_notes',
 			'ad_tax' => 'dp_editors' );
 		break;
+	case "environment":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'environment',
+			'ad_tax' => 'dp_environment' );
+		break;
 	case "food":
 		$related = array(
 			'adccc1' => 'ent_blogs',
@@ -239,11 +245,10 @@ switch ( $blog_slug )
 // Special case:
 if ( $request_array[3] == 'outdoor-extremes' )
 {
-
-		$related = array(
-			'adccc1' => 'outdoor_blogs',
-			'adccc2' => 'outdoor_extremes',
-			'ad_tax' => 'dp_extremes' );
+	$related = array(
+		'adccc1' => 'outdoor_blogs',
+		'adccc2' => 'outdoor_extremes',
+		'ad_tax' => 'dp_extremes' );
 }
 
 

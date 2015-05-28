@@ -116,6 +116,7 @@ if (top !== self)
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <?php wp_get_archives('type=monthly&format=link'); ?>
+<?php wp_enqueue_script('jquery'); ?>
 <?php wp_head(); ?>
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
