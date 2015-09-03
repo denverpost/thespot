@@ -320,7 +320,6 @@ function theSpot_header_style() {
 					  </style>';
 	echo $returnstringy;
 }
-add_custom_image_header('header_style', 'DEVS_BlogTheme_admin_header_style');
 
 add_theme_support( 'custom-header', array(
 	'default-image'				=> get_template_directory_uri() . '/images/white_tile.png',
