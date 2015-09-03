@@ -316,8 +316,8 @@ add_theme_support( 'custom-header', array(
 	'height'					=> 78,
 	'random-default'			=> false,
 	'wp-head-callback'			=> 'theSpot_header_style',
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
+	'admin-head-callback'		=> '',
+	'admin-preview-callback'	=> ''
 ) );
 
 // Attempts to permanently disable the Visual Editor for all users, all the time.
