@@ -1335,7 +1335,7 @@ ul.siteOverview-column li a:hover {
 /* Search/Archives/Categories Results Pages */
 .searchresult, .searchresult h2 {
     display: block;
-    background: url(/wp-content/themes/DEV_BlogsTheme/images/searchresult.gif) no-repeat center transparent scroll;
+    background: url('./images/searchresult.gif') no-repeat center transparent scroll;
     margin: 0px 0px 5px 0px;
     color: #FFFFFF;
     font-size: 1.2em;

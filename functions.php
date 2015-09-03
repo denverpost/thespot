@@ -308,25 +308,17 @@ function mytheme_setup() {
 add_action('after_setup_theme', 'mytheme_setup');
 
 // make changeable header
-define('HEADER_TEXTCOLOR', '');
-define('HEADER_IMAGE', '/wp-content/themes/TheSpot/images/white_tile.png');
-define('HEADER_IMAGE_WIDTH', 495);
-define('HEADER_IMAGE_HEIGHT', 78);
-define('NO_HEADER_TEXT', true);
-
-function DEVS_BlogTheme_admin_header_style() {
-	$returnstringy = '<style type="text/css">
-					  #headimg {
-					  	height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-					  	width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-					  }
-					  #headimg h1, #headimg #desc {
-					  	display: none;
-					  }
-					  </style>';
-	echo $returnstringy;
-}
-add_custom_image_header('header_style', 'DEVS_BlogTheme_admin_header_style');
+add_theme_support( 'custom-header', array(
+	'default-image'				=> get_template_directory_uri() . '/images/white_tile.png',
+	'header-text'				=> false,
+	'default-text-color'		=> '000',
+	'width'						=> 495,
+	'height'					=> 78,
+	'random-default'			=> false,
+	'wp-head-callback'			=> 'theSpot_header_style',
+	'admin-head-callback'		=> $adminhead_cb,
+	'admin-preview-callback'	=> $adminpreview_cb
+) );
 
 // Attempts to permanently disable the Visual Editor for all users, all the time.
 add_filter( 'user_can_richedit', '__return_false', 50 );
