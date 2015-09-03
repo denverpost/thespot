@@ -21,7 +21,7 @@ jQuery(document).ready(function() {
     //Chartbeat stuff
     _sf_async_config.uid = 2671;
     _sf_async_config.domain = 'denverpost.com';
-    _sf_async_config.sections = 'blogs,<?php echo $blog_slug . ' blog'; ?>';
+    _sf_async_config.sections = 'blogs,<?php echo $blog_slug; ?>';
     <?php
     $authiename = (strlen(get_the_author_meta('display_name', $post->post_author)) > 3 ? get_the_author_meta('display_name', $post->post_author) : '');
     echo '_sf_async_config.authors = \'' . $authiename . '\';';
