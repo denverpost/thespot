@@ -82,7 +82,7 @@
             <script type='text/javascript'>
 if ( is_mobile() > 0 )
 {
-                    googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
+                    googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube_two_mobile').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
                     googletag.pubads().enableSyncRendering();
                     googletag.enableServices();
                     googletag.display('dp_blog_cube_two_mobile');
@@ -224,6 +224,21 @@ if ( is_mobile() > 0 )
 
 
 <div id="dpArticleBottom">
+
+    <div id="dp_blog_cube_wrap_four_mobile">
+        <div id='dp_blog_cube_four_mobile'>
+            <script type='text/javascript'>
+if ( is_mobile() > 0 )
+{
+                    googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube_four_mobile').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
+                    googletag.pubads().enableSyncRendering();
+                    googletag.enableServices();
+                    googletag.display('dp_blog_cube_four_mobile');
+}
+            </script>
+        </div>
+    </div>
+
     <div id="dpArticleTabs">
         <ul>
             <li id="dpArticleRelatedTab" class="dpArticleTab dpActiveTab" onclick="dpShowOtherTab(this,dpArticleRelatedDump);">Related Stories</li>

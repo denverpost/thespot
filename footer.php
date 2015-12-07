@@ -7,7 +7,7 @@
             <script type='text/javascript'>
 if ( is_mobile() > 0 )
 {
-                    googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
+                    googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube_three_mobile').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
                     googletag.pubads().enableSyncRendering();
                     googletag.enableServices();
                     googletag.display('dp_blog_cube_three_mobile');
