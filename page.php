@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 
-     <div id="content">
+     <div id="content" class="page">
 	  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	       <div class="post">
 		    <div id="post-<?php the_ID(); ?>">
@@ -14,9 +14,10 @@
      
     	       <?php endwhile; else: ?>
 	       <div class="noresults">
-		    <h1>Not Found: 404 Error</h1>
-		    Oops, it appears that page doesn't exist. Well, we're not all perfect, but we try. Can you try this again or maybe visit our <a 
-title="Our Site" href="http://blogs.denverpost.com">Home Page</a> to start fresh. We'll do better next time.
+		    <h1>404 Error: Not found</h1>
+		    It appears the requested page does not exist. You can start over at our <a 
+title="Our Site" href="http://blogs.denverpost.com">Blogs homepage</a>, return to the <a href="<?php echo homeurl(); ?>">main page for this blog</a>, or try searching:
+			<?php get_search_form(); ?>
 	       </div>
 	       <?php endif; ?>
      </div><!-- Closes the content div-->

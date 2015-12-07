@@ -36,6 +36,12 @@ switch ( $blog_slug )
 			'adccc2' => 'editors_notes',
 			'ad_tax' => 'dp_editors' );
 		break;
+	case "environment":
+		$related = array(
+			'adccc1' => 'news_blogs',
+			'adccc2' => 'environment',
+			'ad_tax' => 'dp_environment' );
+		break;
 	case "food":
 		$related = array(
 			'adccc1' => 'ent_blogs',
@@ -239,11 +245,10 @@ switch ( $blog_slug )
 // Special case:
 if ( $request_array[3] == 'outdoor-extremes' )
 {
-
-		$related = array(
-			'adccc1' => 'outdoor_blogs',
-			'adccc2' => 'outdoor_extremes',
-			'ad_tax' => 'dp_extremes' );
+	$related = array(
+		'adccc1' => 'outdoor_blogs',
+		'adccc2' => 'outdoor_extremes',
+		'ad_tax' => 'dp_extremes' );
 }
 
 
@@ -303,13 +308,7 @@ function mytheme_setup() {
 add_action('after_setup_theme', 'mytheme_setup');
 
 // make changeable header
-define('HEADER_TEXTCOLOR', '');
-define('HEADER_IMAGE', '/wp-content/themes/TheSpot/images/white_tile.png');
-define('HEADER_IMAGE_WIDTH', 495);
-define('HEADER_IMAGE_HEIGHT', 78);
-define('NO_HEADER_TEXT', true);
-
-function DEVS_BlogTheme_admin_header_style() {
+function theSpot_header_style() {
 	$returnstringy = '<style type="text/css">
 					  #headimg {
 					  	height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
@@ -321,7 +320,18 @@ function DEVS_BlogTheme_admin_header_style() {
 					  </style>';
 	echo $returnstringy;
 }
-add_custom_image_header('header_style', 'DEVS_BlogTheme_admin_header_style');
+
+add_theme_support( 'custom-header', array(
+	'default-image'				=> get_template_directory_uri() . '/images/white_tile.png',
+	'header-text'				=> false,
+	'default-text-color'		=> '000',
+	'width'						=> 495,
+	'height'					=> 78,
+	'random-default'			=> false,
+	'wp-head-callback'			=> 'theSpot_header_style',
+	'admin-head-callback'		=> '',
+	'admin-preview-callback'	=> ''
+) );
 
 // Attempts to permanently disable the Visual Editor for all users, all the time.
 add_filter( 'user_can_richedit', '__return_false', 50 );
@@ -338,7 +348,19 @@ function disable_self_trackback( &$links ) {
 }
 add_action( 'pre_ping', 'disable_self_trackback' );
 
-// remove Jetpack OpenGraph tags
-remove_action('wp_head','jetpack_og_tags');
+// remove Jetpack OpenGraph tags and Twitter Cards
+add_filter( 'jetpack_enable_opengraph', '__return_false', 99 );
+add_filter( 'jetpack_disable_twitter_cards', '__return_true', 99 );
+
+// allow script tags in editor
+function allow_script_tags( $allowedposttags ){
+  $allowedposttags['script'] = array(
+      'src' => true,
+      'height' => true,
+      'width' => true,
+    );
+  return $allowedposttags;
+}
+add_filter('wp_kses_allowed_html','allow_script_tags', 1);
 
 ?>
