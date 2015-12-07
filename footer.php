@@ -2,6 +2,20 @@
 
 </div>
 
+    <div id="dp_blog_cube_wrap_three_mobile">
+        <div id='dp_blog_cube_three_mobile'>
+            <script type='text/javascript'>
+if ( is_mobile() > 0 )
+{
+                    googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
+                    googletag.pubads().enableSyncRendering();
+                    googletag.enableServices();
+                    googletag.display('dp_blog_cube_three_mobile');
+}
+            </script>
+        </div>
+    </div>
+
 <div id="dfmFooter"><!--Footer Goes Here--></div>
 
 <?php wp_footer(); ?>

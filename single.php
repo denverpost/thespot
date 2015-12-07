@@ -77,6 +77,20 @@
 
         </div>
 
+    <div id="dp_blog_cube_wrap_two_mobile">
+        <div id='dp_blog_cube_two_mobile'>
+            <script type='text/javascript'>
+if ( is_mobile() > 0 )
+{
+                    googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
+                    googletag.pubads().enableSyncRendering();
+                    googletag.enableServices();
+                    googletag.display('dp_blog_cube_two_mobile');
+}
+            </script>
+        </div>
+    </div>
+
         <div class="storycontent">
 
             <div class="ndn_embed" id="ndn-video-player-1" data-config-distributor-id="90115" style="width:100%;" data-config-height="9/16w"></div>
