@@ -77,16 +77,18 @@
 
         </div>
 
-    <div id="dp_blog_cube_wrap_two_mobile">
+    <div id="dp_blog_cube_wrap_two_mobile" style="display:none;">
+        <div class="adText">Advertisement</div>
         <div id='dp_blog_cube_two_mobile'>
             <script type='text/javascript'>
-if ( is_mobile() > 0 )
-{
+                if ( is_mobile() > 0 )
+                {
+                    $('#dp_blog_cube_wrap_two_mobile').css('display','block');
                     googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube_two_mobile').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
                     googletag.pubads().enableSyncRendering();
                     googletag.enableServices();
                     googletag.display('dp_blog_cube_two_mobile');
-}
+                }
             </script>
         </div>
     </div>
@@ -226,15 +228,17 @@ if ( is_mobile() > 0 )
 <div id="dpArticleBottom">
 
     <div id="dp_blog_cube_wrap_four_mobile">
+        <div class="adText">Advertisement</div>
         <div id='dp_blog_cube_four_mobile'>
             <script type='text/javascript'>
-if ( is_mobile() > 0 )
-{
+                if ( is_mobile() > 0 )
+                {
+                    $('#dp_blog_cube_wrap_four_mobile').css('display','block');
                     googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube_four_mobile').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
                     googletag.pubads().enableSyncRendering();
                     googletag.enableServices();
                     googletag.display('dp_blog_cube_four_mobile');
-}
+                }
             </script>
         </div>
     </div>

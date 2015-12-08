@@ -9,6 +9,33 @@ Author URI: http://blogs.denverpost.com
 #dfmMasthead { height:80px!important; }
 #dfmPageTitle { padding-top:0!important; }
 
+/* mobile ads */
+
+#adText {
+    font-size:9px;
+    text-align:center;
+    color:#757575;
+    margin:4px 0;
+    line-height:1;
+}
+
+#dp_blog_cube_wrap_two_mobile {
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 2px solid #39547a;
+}
+#dp_blog_cube_wrap_three_mobile {
+    text-align:center;
+    margin-bottom:10px;
+}
+#dp_blog_cube_wrap_four_mobile {
+    text-align:center;
+    margin-bottom:10px;
+    padding-bottom:10px;
+    border-bottom: 3px solid #999999;
+}
+
 /* email subscribe widget tweaks */
 form p#subscribe-email {
     margin:10px 0 0;
