@@ -1580,6 +1580,7 @@ div.clear {
         display: block;
         width:100%;
         text-align:center;
+        margin-left:0!important;
     }
     #top_leaderboard_wrap,
     #sidebar2,
