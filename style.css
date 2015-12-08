@@ -11,7 +11,7 @@ Author URI: http://blogs.denverpost.com
 
 /* mobile ads */
 
-#adText {
+div.adText {
     font-size:7px;
     text-align:center;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -1291,7 +1291,7 @@ p.wp-caption-text {
 
 #dfmFooter { border-top:1px solid #ddd; }
 img#footerLogo {
-    width:50%;
+    width:35%;
     border:none;
     margin-top:10px;
 }
