@@ -12,10 +12,10 @@ Author URI: http://blogs.denverpost.com
 /* mobile ads */
 
 div.adText {
-    font-size:7px;
+    font-size:9px;
     text-align:center;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    color:#959595;
+    color:#898989;
     margin:4px 0;
     line-height:1;
 }
