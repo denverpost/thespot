@@ -227,7 +227,7 @@
 
 <div id="dpArticleBottom">
 
-    <div id="dp_blog_cube_wrap_four_mobile">
+    <div id="dp_blog_cube_wrap_four_mobile" style="display:none;">
         <div class="adText">Advertisement</div>
         <div id='dp_blog_cube_four_mobile'>
             <script type='text/javascript'>

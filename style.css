@@ -1045,7 +1045,7 @@ div#commentsGroundRules div.subLinks ul li {
 }
 
 #dpArticleBottom {
-    width:650px;
+    width:100%;
     padding:4px 0 0;
     margin:15px 0;
 }
@@ -1650,7 +1650,7 @@ div.clear {
     }
     #content #sidebar .feedback .articletools,
     #content div.postmeta ul.articletools li {
-        width:24%;
+        width:30%;
         float:left;
         display: inline-block;
         margin-right:3%;
