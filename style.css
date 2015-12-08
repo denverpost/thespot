@@ -35,6 +35,11 @@ Author URI: http://blogs.denverpost.com
     padding-bottom:10px;
     border-bottom: 3px solid #999999;
 }
+#dp_blog_cube_wrap_two_mobile,
+#dp_blog_cube_wrap_three_mobile,
+#dp_blog_cube_wrap_four_mobile {
+    display:none;
+}
 
 /* email subscribe widget tweaks */
 form p#subscribe-email {
@@ -1555,7 +1560,12 @@ div.clear {
 }
 .smslink { display:none; }
 
-@media only screen and (max-width:650px) {      
+@media only screen and (max-width:650px) {
+    #dp_blog_cube_wrap_two_mobile,
+    #dp_blog_cube_wrap_three_mobile,
+    #dp_blog_cube_wrap_four_mobile {
+        display:block;
+    }
     #top_leaderboard_wrap,
     #sidebar2,
     #content #sidebar div.relatedtopicstopper,

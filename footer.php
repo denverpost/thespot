@@ -2,13 +2,12 @@
 
 </div>
 
-    <div id="dp_blog_cube_wrap_three_mobile" style="display:none;">
+    <div id="dp_blog_cube_wrap_three_mobile">
         <div class="adText">Advertisement</div>
         <div id='dp_blog_cube_three_mobile'>
             <script type='text/javascript'>
                 if ( is_mobile() > 0 )
                 {
-                    $('#dp_blog_cube_wrap_three_mobile').css('display','block');
                     googletag.defineSlot('/8013/denverpost.com', [[300,250]], 'dp_blog_cube_three_mobile').setTargeting('blog', '<?php echo $related['ad_tax']; ?>').addService(googletag.pubads());
                     googletag.pubads().enableSyncRendering();
                     googletag.enableServices();
