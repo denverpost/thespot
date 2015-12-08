@@ -1290,19 +1290,7 @@ p.wp-caption-text {
 /* Credits */
 
 #dfmFooter { border-top:1px solid #ddd; }
-img#footerLogo {
-    width:35%;
-    border:none;
-    margin-top:10px;
-}
-#dfmFooterLinks ul li {
-    list-style-type: none;
-}
-#dfmFooterLinks ul li:first-child {
-    display: block;
-    width:100%;
-    text-align:center;
-}
+
 #footer {
     margin: 10px 10px 0px 0px;
     width: 1006px;
@@ -1579,6 +1567,19 @@ div.clear {
     #dp_blog_cube_wrap_three_mobile,
     #dp_blog_cube_wrap_four_mobile {
         display:block;
+    }
+    img#footerLogo {
+        width:35%;
+        border:none;
+        margin-top:10px;
+    }
+    #dfmEndFooterLinks ul li {
+        list-style-type: none;
+    }
+    #dfmEndFooterLinks ul li:first-child {
+        display: block;
+        width:100%;
+        text-align:center;
     }
     #top_leaderboard_wrap,
     #sidebar2,
