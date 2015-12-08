@@ -12,7 +12,7 @@ Author URI: http://blogs.denverpost.com
 /* mobile ads */
 
 div.adText {
-    font-size:9px;
+    font-size:11px;
     text-align:center;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     color:#898989;
@@ -1295,7 +1295,14 @@ img#footerLogo {
     border:none;
     margin-top:10px;
 }
-
+#dfmFooterLinks ul li {
+    list-style-type: none;
+}
+#dfmFooterLinks ul li:first-child {
+    display: block;
+    width:100%;
+    text-align:center;
+}
 #footer {
     margin: 10px 10px 0px 0px;
     width: 1006px;
