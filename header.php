@@ -40,7 +40,7 @@ if(is_single() || is_page()) {
 	$temp_post = get_post($post->ID);
     $twitter_user_id = $temp_post->post_author;
 ?>
-<meta name="twitter:card" value="summary" />
+<meta name="twitter:card" value="summary_large_image" />
 <meta name="twitter:url" value="<?php echo $twitter_url; ?>" />
 <meta name="twitter:title" value="<?php echo $twitter_title; ?>" />
 <meta name="twitter:description" value="<?php echo $twitter_desc; ?>" />
