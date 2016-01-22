@@ -333,9 +333,6 @@ add_theme_support( 'custom-header', array(
 	'admin-preview-callback'	=> ''
 ) );
 
-// Attempts to permanently disable the Visual Editor for all users, all the time.
-add_filter( 'user_can_richedit', '__return_false', 50 );
-
 // Hide the Wordpress admin bar for everyone
 function my_function_admin_bar(){ return false; }
 add_filter( 'show_admin_bar', 'my_function_admin_bar' );
