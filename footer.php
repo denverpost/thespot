@@ -56,7 +56,7 @@ jQuery(document).ready(function() {
     })();
 </script>
 
-<script type="text/javascript" src="http://local.denverpost.com/common/dfm/dfm-nav/dfm-nav-core.js"></script>
+<script type="text/javascript" src="http://local.denverpost.com/common/dfm/dfm-nav/dfm-nav-core-1.4.7.js"></script>
 <script type="text/javascript"> dfmNav.initParams("mode|article", "site|denverpost", "pageTitle|<?php bloginfo('name'); ?>", "leaderboard|false", "thirdParty|true"); </script>
 
 </body>
