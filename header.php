@@ -35,7 +35,7 @@ if(is_single() || is_page()) {
 	$twitter_thumbs = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
     $twitter_thumb  = $twitter_thumbs[0];
 	if(!$twitter_thumb) {
-		$twitter_thumb = 'http://local.denverpost.com/common/dfm/assets/logos/small/denverpost.png';
+		$twitter_thumb = 'http://local.denverpost.com/common/dfm/assets/logos/small/denverpost.png?v=21060130';
 	}
 	$temp_post = get_post($post->ID);
     $twitter_user_id = $temp_post->post_author;
