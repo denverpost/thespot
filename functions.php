@@ -360,4 +360,23 @@ function allow_script_tags( $allowedposttags ){
 }
 add_filter('wp_kses_allowed_html','allow_script_tags', 1);
 
+// allow HTML5 data- atributes for NDN videos
+function mawaha_filter_allowed_html($allowed, $context){
+	if (is_array($context)) {
+	    return $allowed;
+	}
+	if ($context === 'post') {
+	    $allowed['div']['data-config-widget-id'] = true;
+	    $allowed['div']['data-config-type'] = true;
+	    $allowed['div']['data-config-tracking-group'] = true;
+	    $allowed['div']['data-config-playlist-id'] = true;
+	    $allowed['div']['data-config-video-id'] = true;
+	    $allowed['div']['data-config-site-section'] = true;
+	    $allowed['div']['data-config-width'] = true;
+	    $allowed['div']['data-config-height'] = true;
+	}
+	return $allowed;
+}
+add_filter('wp_kses_allowed_html', 'mawaha_filter_allowed_html', 10, 2);
+
 ?>
