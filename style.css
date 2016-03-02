@@ -9,8 +9,10 @@ Author URI: http://blogs.denverpost.com
 #dfmMasthead { height:80px!important; }
 #dfmPageTitle { padding-top:0!important; }
 
-/* mobile ads */
+/*podcast player overrides */
+.powerpress_player .mejs-container {clear:none;}
 
+/* mobile ads */
 div.adText {
     font-size:11px;
     text-align:center;
