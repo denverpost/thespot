@@ -10,7 +10,11 @@ Author URI: http://blogs.denverpost.com
 #dfmPageTitle { padding-top:0!important; }
 
 /*podcast player overrides */
-.powerpress_player .mejs-container {clear:none;}
+.powerpress_player .mejs-container {
+    clear: none;
+    overflow: hidden;
+    margin-bottom: .5em;
+}
 
 /* mobile ads */
 div.adText {
