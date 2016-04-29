@@ -232,7 +232,7 @@ switch ( $blog_slug )
 		$related = array(
 			'adccc1' => 'ent_blogs',
 			'adccc2' => 'beer_blog',
-			'ad_tax' => 'dp_beer' );
+			'ad_tax' => 'beer' );
 		break;
 	case "videogames":
 		$related = array(
