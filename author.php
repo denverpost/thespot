@@ -21,8 +21,8 @@
         <div class="authordescription">
         <?php if (the_author_image_url() ) the_author_image(); ?>
         <?php echo nl2br($curauth->description); ?>
-        </div>
-        <a class="authoremail" href="mailto:<?php echo $curauth->user_email; ?>">Send <?php echo $curauth->first_name; ?> an e-mail</a>
+        </div> <!--
+        <a class="authoremail" href="mailto:<?php // echo $curauth->user_email; ?>">Send <?php // echo $curauth->first_name; ?> an e-mail</a> -->
     </div>
     
     <div class="articlecolumn">
